@@ -8,7 +8,8 @@ export default function WelcomeOverlay({
     setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
     const handleCloseOverlay = () => {
-        setShowOverlay(false); // Close overlay on button click
+        setShowOverlay(false);
+        localStorage.setItem("overlay", "false")
     };
 
     return (
