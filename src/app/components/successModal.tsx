@@ -23,7 +23,7 @@ export default function SuccessSummary({ prediction }: { prediction: Record<stri
                         value > 0 && (
                             <div key={outletId}>
                                 <p className="font-bold"> - {outletId}</p>
-                                <p>Value: {value}</p>
+                                <p>Probability: {value}%</p>
                             </div>
                         )
                     )}
