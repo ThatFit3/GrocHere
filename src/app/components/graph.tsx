@@ -8,17 +8,16 @@ import {
     Title,
 } from "chart.js";
 
-// Register required Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 const SummaryPrediction = ({ summaryPrediction }: { summaryPrediction: Record<string, number> }) => {
-    // Check if summaryPrediction is valid
+
     if (!summaryPrediction || Object.keys(summaryPrediction).length === 0) {
         return <p>No prediction data available</p>;
     }
 
-    const labels = Object.keys(summaryPrediction); // E.g., OUT010, OUT013
-    const values = Object.values(summaryPrediction); // E.g., 0, 34.91
+    const labels = Object.keys(summaryPrediction);
+    const values = Object.values(summaryPrediction);
 
     const chartData = {
         labels,
@@ -59,18 +58,18 @@ const SummaryPrediction = ({ summaryPrediction }: { summaryPrediction: Record<st
         responsive: true,
         plugins: {
             legend: {
-                display: false, // Show legend for better clarity
+                display: false,
                 position: "bottom" as const,
             },
             title: {
                 display: true,
-                text: "Summary Prediction (Pie Chart)",
+                text: "Summary Prediction",
             },
         },
     };
 
     return (
-        <div className="w-full h-fit flex justify-center">
+        <div className="w-full h-full flex justify-center md:mt-0 mt-12">
             <Pie data={chartData} options={options} />
         </div>
     );

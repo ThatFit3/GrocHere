@@ -19,7 +19,7 @@ export default function WelcomeOverlay({
                 } bg-black text-white`}
         >
             <div className="text-center">
-                <h1 className="text-4xl font-bold mb-4">Welcome to Our GrocHere!</h1>
+                <h1 className="text-4xl font-bold mb-4">Welcome to Our GrocerHere!</h1>
                 <p className="text-lg mb-16">Don't know where to do your grochery?</p>
                 <p>&gt; Click anywhere to start! &lt;</p>
             </div>

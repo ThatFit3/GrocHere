@@ -64,14 +64,18 @@ export default function ListForm() {
                     placeholder="The grocery list..."
                     onChange={handleTextAreaChange}
                     value={textAreaValue}></textarea>
-                <div className="join join-horizontal w-full mt-3">
-                    <button className="join-item btn btn-primary px-7 w-3/4" type="submit">Submit</button>
+                <div className="md:block hidden join join-horizontal w-full mt-3">
+                    <button className="join-item btn btn-primary px-7 w-full md:w-3/4" type="submit">Submit</button>
                     <button className={`join-item btn btn-${canShow ? "accent" : "disabled"} px-7 w-1/4`} disabled={!canShow} type="button" onClick={handleShowModal}>See result</button>
                 </div>
+                <button className="md:hidden join-item btn btn-primary px-7 w-full md:w-3/4 mt-4" type="submit">Submit</button>
+
+                <button className={`md:hidden join-item btn btn-${canShow ? "accent" : "disabled"} px-7 w-full mt-4`} disabled={!canShow} type="button" onClick={handleShowModal}>See result</button>
+
             </form>
 
             <dialog id="success-modal" className="modal">
-                <div className="modal-box w-11/12 h-fit max-w-5xl">
+                <div className="modal-box w-11/12 h-fit max-w-5xl overflow-auto">
                     <SuccessModal prediction={prediction} />
                 </div>
             </dialog >
